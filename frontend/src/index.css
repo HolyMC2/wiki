@@ -1,3 +1,14 @@
 @import "./assets/Inter/inter.css";
 @import "frappe-ui/style.css";
 @import "./wiki-rendered.css";
+
+/* Dialog open/close animations are disabled: reka-ui's Presence unmounts the
+   overlay only after the leave animation's end event, and rapid open/close
+   cycles (create dialog reused back-to-back) can lose that event — leaving a
+   ghost overlay that dims the page, swallows every click, and keeps body
+   pointer-events locked. With no animation, Presence unmounts synchronously
+   and the whole failure class is gone, at the cost of the 100/150ms fade. */
+.dialog-overlay[data-state],
+.dialog-content[data-state] {
+	animation: none !important;
+}
