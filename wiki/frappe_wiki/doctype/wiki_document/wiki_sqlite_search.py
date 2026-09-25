@@ -102,7 +102,11 @@ def enqueue_reindex(docnames: list[str]):
 
 	try:
 		for docname in docnames:
-			search.add_to_queue(f"Wiki Document:{docname}")
+			if hasattr(search, "add_to_queue"):
+				search.add_to_queue(f"Wiki Document:{docname}")
+			else:
+				# Frappe 16 has no index queue; its own on_update hook indexes inline.
+				search.index_doc("Wiki Document", docname)
 	except Exception:
 		frappe.log_error(
 			title="Wiki Search Reindex Queue Error",

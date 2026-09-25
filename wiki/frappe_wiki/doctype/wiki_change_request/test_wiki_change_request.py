@@ -276,7 +276,11 @@ class TestWikiChangeRequest(FrappeTestCase):
 		"""Content-only merges write via raw db.set_value, which skips the
 		on_update hook — the merge must queue the re-index itself, or search
 		keeps serving the pre-merge content."""
-		from frappe.search.sqlite_search import index_docs_in_queue
+		try:
+			from frappe.search.sqlite_search import index_docs_in_queue
+		except ImportError:
+			# Frappe 16 has no index queue: the merge re-indexes inline.
+			index_docs_in_queue = None
 
 		from wiki.frappe_wiki.doctype.wiki_document.wiki_sqlite_search import WikiSQLiteSearch
 
@@ -292,7 +296,8 @@ class TestWikiChangeRequest(FrappeTestCase):
 		update_cr_page(cr.name, page_key, {"content": "freshtermv2zzz"})
 		_approve_and_merge(cr.name)
 
-		index_docs_in_queue()
+		if index_docs_in_queue:
+			index_docs_in_queue()
 
 		stale_names = [r["name"] for r in search.search("staletermv1zzz")["results"]]
 		fresh_names = [r["name"] for r in search.search("freshtermv2zzz")["results"]]
