@@ -73,7 +73,7 @@
                 class="px-4 py-3 flex items-center justify-between gap-4 bg-surface-gray-1 border-b border-outline-gray-2"
             >
                 <div class="flex items-center gap-3 min-w-0">
-                    <LucideGithub class="size-5 shrink-0 text-ink-gray-7" />
+                    <LucideGitBranch class="size-5 shrink-0 text-ink-gray-7" />
                     <div class="min-w-0">
                         <a
                             v-if="space.doc?.repo_full_name"
@@ -212,7 +212,8 @@ import {
 } from 'frappe-ui';
 import { computed, onBeforeUnmount, onMounted, ref, watch } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
-import LucideGithub from '~icons/lucide/github';
+// lucide v1 dropped brand icons, so there is no `lucide/github`.
+import LucideGitBranch from '~icons/lucide/git-branch';
 import LucidePanelLeft from '~icons/lucide/panel-left';
 import LucideRefreshCw from '~icons/lucide/refresh-cw';
 import ContributionBanner from '../components/ContributionBanner.vue';

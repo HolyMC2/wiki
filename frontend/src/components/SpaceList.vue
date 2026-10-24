@@ -178,7 +178,7 @@
                 </p>
                 <Button variant="subtle" :loading="githubConnected.loading" @click="connectGithub">
                   <template #prefix>
-                    <LucideGithub class="h-4 w-4" />
+                    <LucideGitBranch class="h-4 w-4" />
                   </template>
                   {{ __('Connect GitHub') }}
                 </Button>
@@ -195,7 +195,7 @@
                 </p>
                 <Button variant="subtle" :loading="installationsResource.loading" @click="installApp">
                   <template #prefix>
-                    <LucideGithub class="h-4 w-4" />
+                    <LucideGitBranch class="h-4 w-4" />
                   </template>
                   {{ __('Install GitHub App') }}
                 </Button>
@@ -277,14 +277,15 @@ import {
 	Dialog,
 	ErrorMessage,
 	FormControl,
-	ListView,
 	createListResource,
 	createResource,
 	toast,
 } from 'frappe-ui';
+import { ListView } from 'frappe-ui/experimental';
 import { computed, reactive, ref, watch } from 'vue';
 import { useRouter } from 'vue-router';
-import LucideGithub from '~icons/lucide/github';
+// lucide v1 dropped brand icons, so there is no `lucide/github`.
+import LucideGitBranch from '~icons/lucide/git-branch';
 import LucideLoader2 from '~icons/lucide/loader-2';
 import LucidePlus from '~icons/lucide/plus';
 import LucideSearch from '~icons/lucide/search';

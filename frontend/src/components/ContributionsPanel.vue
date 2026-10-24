@@ -72,7 +72,8 @@
 
 <script setup>
 import AssigneeAvatars from '@/components/AssigneeAvatars.vue';
-import { Badge, Button, ListView, LoadingIndicator } from 'frappe-ui';
+import { Badge, Button, LoadingIndicator } from 'frappe-ui';
+import { ListView } from 'frappe-ui/experimental';
 import LucideClock from '~icons/lucide/clock';
 
 defineProps({
