@@ -24,14 +24,14 @@
 		</div>
 
 		<div v-if="isSearching && !hasResults"
-			class="flex flex-col items-center justify-center py-16 border border-dashed border-outline-gray-2 rounded-lg">
+			class="flex flex-col items-center justify-center py-16 border border-dashed border-outline-gray-2 rounded-6">
 			<LucideSearch class="size-12 text-ink-gray-4 mb-4" />
 			<h3 class="text-lg-medium text-ink-gray-7 mb-2">{{ __('No matches') }}</h3>
 			<p class="text-sm text-ink-gray-5">{{ __('No pages or groups match "{0}"', [searchQuery]) }}</p>
 		</div>
 
 		<div v-else-if="!treeData.children || treeData.children.length === 0"
-			class="flex flex-col items-center justify-center py-16 border border-dashed border-outline-gray-2 rounded-lg">
+			class="flex flex-col items-center justify-center py-16 border border-dashed border-outline-gray-2 rounded-6">
 			<LucideFileText class="size-12 text-ink-gray-4 mb-4" />
 			<h3 class="text-lg-medium text-ink-gray-7 mb-2">{{ __('No pages yet') }}</h3>
 			<template v-if="!readonly">
@@ -46,7 +46,7 @@
 			<p v-else class="text-sm text-ink-gray-5">{{ __('No pages have synced from the repository yet') }}</p>
 		</div>
 
-		<div v-else class="border border-outline-gray-2 rounded-lg overflow-hidden">
+		<div v-else class="border border-outline-gray-2 rounded-6 overflow-hidden">
 			<NestedDraggable
 				:key="treeKey"
 				:items="treeForRender.children"
@@ -104,7 +104,7 @@
 						{{ deleteNode?.is_group ? __('group') : __('page') }}?
 					</p>
 					<div v-if="deleteNode?.is_group && deleteChildCount > 0"
-						class="bg-surface-orange-1 border border-outline-orange-2 rounded-lg p-4">
+						class="bg-surface-orange-1 border border-outline-orange-2 rounded-6 p-4">
 						<div class="flex items-start gap-3">
 							<LucideAlertTriangle class="size-5 text-ink-orange-4 flex-shrink-0 mt-0.5" />
 							<div>

@@ -26,7 +26,7 @@
                     <div class="flex items-center gap-1.5 flex-1 min-w-0">
                         <button
                             v-if="!readonly && !searchActive"
-                            class="drag-handle p-0.5 hover:bg-surface-gray-3 rounded cursor-grab active:cursor-grabbing opacity-0 group-hover:opacity-100 transition-opacity"
+                            class="drag-handle p-0.5 hover:bg-surface-gray-3 rounded-4 cursor-grab active:cursor-grabbing opacity-0 group-hover:opacity-100 transition-opacity"
                             @click.stop
                         >
                             <LucideGripVertical class="size-4 text-ink-gray-4" />
@@ -34,7 +34,7 @@
 
                         <button
                             v-if="element.is_group" 
-                            class="p-0.5 hover:bg-surface-gray-3 rounded"
+                            class="p-0.5 hover:bg-surface-gray-3 rounded-4"
                             @click.stop="toggleExpanded(element.doc_key)"
                         >
                             <LucideChevronRight 
@@ -50,11 +50,11 @@
 
                         <div class="flex flex-col flex-1 min-w-0">
                             <span class="text-sm truncate" :class="getTitleClass(element)">
-                                <template v-for="(seg, i) in titleParts(element)" :key="i"><mark v-if="seg.matched" class="bg-surface-amber-2 text-ink-gray-9 rounded-sm">{{ seg.text }}</mark><template v-else>{{ seg.text }}</template></template>
+                                <template v-for="(seg, i) in titleParts(element)" :key="i"><mark v-if="seg.matched" class="bg-surface-amber-2 text-ink-gray-9 rounded-1">{{ seg.text }}</mark><template v-else>{{ seg.text }}</template></template>
                             </span>
                             <!-- Why it matched, when the route hit but the title didn't. -->
                             <span v-if="routeParts(element)" class="text-xs text-ink-gray-4 truncate">
-                                <template v-for="(seg, i) in routeParts(element)" :key="i"><mark v-if="seg.matched" class="bg-surface-amber-2 text-ink-gray-9 rounded-sm">{{ seg.text }}</mark><template v-else>{{ seg.text }}</template></template>
+                                <template v-for="(seg, i) in routeParts(element)" :key="i"><mark v-if="seg.matched" class="bg-surface-amber-2 text-ink-gray-9 rounded-1">{{ seg.text }}</mark><template v-else>{{ seg.text }}</template></template>
                             </span>
                         </div>
 
@@ -120,14 +120,14 @@
                         :style="{ paddingLeft: `${level * 12 + 60}px` }"
                     >
                         <button
-                            class="flex items-center gap-1.5 text-xs hover:text-ink-gray-7 hover:bg-surface-gray-2 px-2 py-1 rounded transition-colors"
+                            class="flex items-center gap-1.5 text-xs hover:text-ink-gray-7 hover:bg-surface-gray-2 px-2 py-1 rounded-4 transition-colors"
                             @click="emit('create', element.doc_key, false)"
                         >
                             <LucideFilePlus class="size-3.5" />
                             <span>{{ __('Add Page') }}</span>
                         </button>
                         <button
-                            class="flex items-center gap-1.5 text-xs hover:text-ink-gray-7 hover:bg-surface-gray-2 px-2 py-1 rounded transition-colors"
+                            class="flex items-center gap-1.5 text-xs hover:text-ink-gray-7 hover:bg-surface-gray-2 px-2 py-1 rounded-4 transition-colors"
                             @click="emit('create', element.doc_key, true)"
                         >
                             <LucideFolderPlus class="size-3.5" />

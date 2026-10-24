@@ -56,7 +56,7 @@
              The toggle matches the nav's logo/menu buttons (44px). -->
         <Teleport v-if="isMobile" to="#app-header">
             <button
-                class="flex size-11 shrink-0 items-center justify-center rounded text-ink-gray-7 hover:bg-surface-gray-3"
+                class="flex size-11 shrink-0 items-center justify-center rounded-4 text-ink-gray-7 hover:bg-surface-gray-3"
                 :title="__('Pages')"
                 @click="mobileTreeOpen = true"
             >

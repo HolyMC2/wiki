@@ -1,7 +1,7 @@
 <template>
 	<div class="flex flex-col gap-4">
 		<div
-			class="flex items-center justify-between rounded-lg border border-outline-gray-2 bg-surface-gray-1 p-3"
+			class="flex items-center justify-between rounded-6 border border-outline-gray-2 bg-surface-gray-1 p-3"
 		>
 			<div class="mr-4 flex-1">
 				<p class="text-sm-medium text-ink-gray-9">
@@ -19,7 +19,7 @@
 		</div>
 
 		<div
-			class="flex items-center justify-between rounded-lg border border-outline-gray-2 bg-surface-gray-1 p-3"
+			class="flex items-center justify-between rounded-6 border border-outline-gray-2 bg-surface-gray-1 p-3"
 		>
 			<div class="mr-4 flex-1">
 				<p class="text-sm-medium text-ink-gray-9">
@@ -37,7 +37,7 @@
 		</div>
 
 		<div
-			class="flex items-center justify-between rounded-lg border border-outline-gray-2 bg-surface-gray-1 p-3"
+			class="flex items-center justify-between rounded-6 border border-outline-gray-2 bg-surface-gray-1 p-3"
 		>
 			<div class="mr-4 flex-1">
 				<p class="text-sm-medium text-ink-gray-9">
@@ -53,7 +53,7 @@
 		</div>
 
 		<div
-			class="flex items-center justify-between rounded-lg border border-outline-gray-2 bg-surface-gray-1 p-3"
+			class="flex items-center justify-between rounded-6 border border-outline-gray-2 bg-surface-gray-1 p-3"
 		>
 			<div class="mr-4 flex-1">
 				<p class="text-sm-medium text-ink-gray-9">

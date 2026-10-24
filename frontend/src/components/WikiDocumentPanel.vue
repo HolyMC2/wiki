@@ -62,7 +62,7 @@
 					>
 						<span class="flex items-center gap-2">
 							{{ __('Save') }}
-							<kbd class="inline-flex items-center gap-1 rounded bg-white/25 px-1.5 py-0.5 text-[11px] font-medium opacity-80">
+							<kbd class="inline-flex items-center gap-1 rounded-4 bg-white/25 px-1.5 py-0.5 text-[11px] font-medium opacity-80">
 								<span class="text-sm">{{ isMac ? '⌘' : 'Ctrl+' }}</span><span>S</span>
 							</kbd>
 						</span>
@@ -79,15 +79,15 @@
 				<WikiEditor v-if="editorKey" :key="editorKey" ref="editorRef" :content="editorContent" :document-key="wikiDoc.doc?.doc_key" :saved-content="savedContent" :readonly="readonly" @save="saveContent" @save-all="flushOtherDirtyPages" @content-change="onEditorContentChange" @content-ready="onEditorContentReady" />
 				<!-- Editor body skeleton while the CR page overlay loads -->
 				<div v-else class="space-y-4 animate-pulse">
-					<div class="h-4 w-3/4 rounded bg-surface-gray-3" />
-					<div class="h-4 w-full rounded bg-surface-gray-3" />
-					<div class="h-4 w-5/6 rounded bg-surface-gray-3" />
-					<div class="h-4 w-full rounded bg-surface-gray-3" />
-					<div class="h-4 w-2/3 rounded bg-surface-gray-3" />
-					<div class="h-4 w-full rounded bg-surface-gray-3 mt-6" />
-					<div class="h-4 w-4/5 rounded bg-surface-gray-3" />
-					<div class="h-4 w-full rounded bg-surface-gray-3" />
-					<div class="h-4 w-3/4 rounded bg-surface-gray-3" />
+					<div class="h-4 w-3/4 rounded-4 bg-surface-gray-3" />
+					<div class="h-4 w-full rounded-4 bg-surface-gray-3" />
+					<div class="h-4 w-5/6 rounded-4 bg-surface-gray-3" />
+					<div class="h-4 w-full rounded-4 bg-surface-gray-3" />
+					<div class="h-4 w-2/3 rounded-4 bg-surface-gray-3" />
+					<div class="h-4 w-full rounded-4 bg-surface-gray-3 mt-6" />
+					<div class="h-4 w-4/5 rounded-4 bg-surface-gray-3" />
+					<div class="h-4 w-full rounded-4 bg-surface-gray-3" />
+					<div class="h-4 w-3/4 rounded-4 bg-surface-gray-3" />
 				</div>
 			</div>
 		</div>
@@ -96,25 +96,25 @@
 		<div v-else class="h-full flex flex-col animate-pulse">
 			<div class="flex items-center justify-between p-6 pb-4 shrink-0 border-b-2 border-b-gray-500/20">
 				<div class="flex items-center gap-2">
-					<div class="h-7 w-48 rounded bg-surface-gray-3" />
+					<div class="h-7 w-48 rounded-4 bg-surface-gray-3" />
 					<div class="h-5 w-16 rounded-full bg-surface-gray-3" />
 				</div>
 				<div class="flex items-center gap-2">
-					<div class="h-8 w-24 rounded bg-surface-gray-3" />
-					<div class="h-8 w-28 rounded bg-surface-gray-3" />
-					<div class="size-8 rounded bg-surface-gray-3" />
+					<div class="h-8 w-24 rounded-4 bg-surface-gray-3" />
+					<div class="h-8 w-28 rounded-4 bg-surface-gray-3" />
+					<div class="size-8 rounded-4 bg-surface-gray-3" />
 				</div>
 			</div>
 			<div class="flex-1 px-6 pb-6 mt-4 space-y-4">
-				<div class="h-4 w-3/4 rounded bg-surface-gray-3" />
-				<div class="h-4 w-full rounded bg-surface-gray-3" />
-				<div class="h-4 w-5/6 rounded bg-surface-gray-3" />
-				<div class="h-4 w-full rounded bg-surface-gray-3" />
-				<div class="h-4 w-2/3 rounded bg-surface-gray-3" />
-				<div class="h-4 w-full rounded bg-surface-gray-3 mt-6" />
-				<div class="h-4 w-4/5 rounded bg-surface-gray-3" />
-				<div class="h-4 w-full rounded bg-surface-gray-3" />
-				<div class="h-4 w-3/4 rounded bg-surface-gray-3" />
+				<div class="h-4 w-3/4 rounded-4 bg-surface-gray-3" />
+				<div class="h-4 w-full rounded-4 bg-surface-gray-3" />
+				<div class="h-4 w-5/6 rounded-4 bg-surface-gray-3" />
+				<div class="h-4 w-full rounded-4 bg-surface-gray-3" />
+				<div class="h-4 w-2/3 rounded-4 bg-surface-gray-3" />
+				<div class="h-4 w-full rounded-4 bg-surface-gray-3 mt-6" />
+				<div class="h-4 w-4/5 rounded-4 bg-surface-gray-3" />
+				<div class="h-4 w-full rounded-4 bg-surface-gray-3" />
+				<div class="h-4 w-3/4 rounded-4 bg-surface-gray-3" />
 			</div>
 		</div>
 		<Dialog v-model:open="showRouteDialog" size="sm">

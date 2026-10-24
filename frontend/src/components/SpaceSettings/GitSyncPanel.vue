@@ -2,7 +2,7 @@
 	<div class="flex flex-col gap-4">
 		<!-- Repository + Sync now -->
 		<div
-			class="flex items-center justify-between rounded-lg border border-outline-gray-2 bg-surface-gray-1 p-3"
+			class="flex items-center justify-between rounded-6 border border-outline-gray-2 bg-surface-gray-1 p-3"
 		>
 			<div class="mr-4 flex-1 min-w-0">
 				<p class="text-sm-medium text-ink-gray-9">
@@ -33,7 +33,7 @@
 
 		<!-- Last sync time -->
 		<div
-			class="flex items-center justify-between rounded-lg border border-outline-gray-2 bg-surface-gray-1 p-3"
+			class="flex items-center justify-between rounded-6 border border-outline-gray-2 bg-surface-gray-1 p-3"
 		>
 			<div class="mr-4 flex-1">
 				<p class="text-sm-medium text-ink-gray-9">
@@ -47,7 +47,7 @@
 
 		<!-- Webhook: real-time push sync -->
 		<div
-			class="rounded-lg border border-outline-gray-2 bg-surface-gray-1 p-3"
+			class="rounded-6 border border-outline-gray-2 bg-surface-gray-1 p-3"
 		>
 			<p class="text-sm-medium text-ink-gray-9">
 				{{ __('Real-time Sync') }}
@@ -57,7 +57,7 @@
 			</p>
 			<div class="mt-2 flex items-center gap-2">
 				<code
-					class="flex-1 min-w-0 truncate rounded bg-surface-gray-2 px-2 py-1 text-xs text-ink-gray-7"
+					class="flex-1 min-w-0 truncate rounded-4 bg-surface-gray-2 px-2 py-1 text-xs text-ink-gray-7"
 				>
 					{{ webhookUrl }}
 				</code>
@@ -72,7 +72,7 @@
 		</div>
 
 		<!-- Run history -->
-		<div class="rounded-lg border border-outline-gray-2 bg-surface-gray-1">
+		<div class="rounded-6 border border-outline-gray-2 bg-surface-gray-1">
 			<div class="flex items-center justify-between border-b border-outline-gray-2 p-3">
 				<p class="text-sm-medium text-ink-gray-9">
 					{{ __('Sync History') }}
@@ -150,7 +150,7 @@
 		<CollapsibleSection :title="__('Configuration (.wiki.json)')">
 			<pre
 				v-if="wikiConfig"
-				class="max-h-80 overflow-auto whitespace-pre rounded bg-surface-gray-2 p-3 font-mono text-xs leading-relaxed text-ink-gray-8"
+				class="max-h-80 overflow-auto whitespace-pre rounded-4 bg-surface-gray-2 p-3 font-mono text-xs leading-relaxed text-ink-gray-8"
 			>{{ wikiConfig }}</pre>
 			<p v-else class="text-xs text-ink-gray-5">
 				{{ __('No .wiki.json in the repo — the page tree is inferred from the docs folder.') }}

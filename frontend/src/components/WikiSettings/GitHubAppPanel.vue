@@ -3,7 +3,7 @@
 		<!-- Intro + one-click create — only while the App isn't configured yet. -->
 		<div
 			v-if="!isConfigured"
-			class="rounded-lg border border-outline-gray-2 bg-surface-gray-1 p-3"
+			class="rounded-6 border border-outline-gray-2 bg-surface-gray-1 p-3"
 		>
 			<p class="text-sm-medium text-ink-gray-9">{{ __('GitHub Sync') }}</p>
 			<p class="mt-0.5 text-xs text-ink-gray-5">
@@ -113,7 +113,7 @@
 					:placeholder="
 						hasPrivateKey ? __('Configured — paste a new key to replace') : __('Paste PEM private key')
 					"
-					class="w-full rounded-lg border border-outline-gray-2 bg-surface-gray-1 p-3 font-mono text-xs text-ink-gray-9 focus:border-outline-gray-3 focus:outline-none"
+					class="w-full rounded-6 border border-outline-gray-2 bg-surface-gray-1 p-3 font-mono text-xs text-ink-gray-9 focus:border-outline-gray-3 focus:outline-none"
 				/>
 			</div>
 

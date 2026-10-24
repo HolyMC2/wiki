@@ -51,22 +51,22 @@
 				<div
 					v-for="i in 8"
 					:key="i"
-					class="flex items-center gap-2 px-2 py-1.5 rounded"
+					class="flex items-center gap-2 px-2 py-1.5 rounded-4"
 				>
-					<div class="size-4 rounded bg-surface-gray-3 shrink-0" />
+					<div class="size-4 rounded-4 bg-surface-gray-3 shrink-0" />
 					<div
-						class="h-3.5 rounded bg-surface-gray-3"
+						class="h-3.5 rounded-4 bg-surface-gray-3"
 						:style="{ width: `${60 + (i % 3) * 25}%` }"
 					/>
 				</div>
 				<div
 					v-for="i in 4"
 					:key="'nested-' + i"
-					class="flex items-center gap-2 px-2 py-1.5 rounded ml-6"
+					class="flex items-center gap-2 px-2 py-1.5 rounded-4 ml-6"
 				>
-					<div class="size-4 rounded bg-surface-gray-3 shrink-0" />
+					<div class="size-4 rounded-4 bg-surface-gray-3 shrink-0" />
 					<div
-						class="h-3.5 rounded bg-surface-gray-3"
+						class="h-3.5 rounded-4 bg-surface-gray-3"
 						:style="{ width: `${50 + (i % 2) * 30}%` }"
 					/>
 				</div>

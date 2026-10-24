@@ -18,7 +18,7 @@
 				/>
 				<div
 					v-if="showRoleList"
-					class="absolute z-20 mt-1 max-h-52 w-full overflow-y-auto rounded-lg border border-outline-gray-2 bg-surface-elevation-2 p-1 shadow-lg"
+					class="absolute z-20 mt-1 max-h-52 w-full overflow-y-auto rounded-6 border border-outline-gray-2 bg-surface-elevation-2 p-1 shadow-lg"
 				>
 					<div
 						v-if="allRoles.loading"
@@ -31,7 +31,7 @@
 							v-for="role in filteredRoleOptions"
 							:key="role"
 							type="button"
-							class="block w-full truncate rounded px-2.5 py-1.5 text-left text-base text-ink-gray-7 hover:bg-surface-gray-3"
+							class="block w-full truncate rounded-4 px-2.5 py-1.5 text-left text-base text-ink-gray-7 hover:bg-surface-gray-3"
 							@mousedown.prevent
 							@click="pickRole(role)"
 						>
@@ -52,7 +52,7 @@
 		</div>
 
 		<!-- Roles table -->
-		<div class="overflow-hidden rounded-lg border border-outline-gray-2">
+		<div class="overflow-hidden rounded-6 border border-outline-gray-2">
 			<table class="w-full table-fixed text-sm">
 				<thead>
 					<tr class="bg-surface-gray-2 text-ink-gray-5">
@@ -118,7 +118,7 @@
 
 		<!-- Accept contributions -->
 		<div
-			class="flex items-center justify-between rounded-lg border border-outline-gray-2 bg-surface-gray-1 p-3"
+			class="flex items-center justify-between rounded-6 border border-outline-gray-2 bg-surface-gray-1 p-3"
 		>
 			<div class="mr-4 flex-1">
 				<p class="text-sm-medium text-ink-gray-9">

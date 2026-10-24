@@ -8,7 +8,7 @@
 		     the list views. -->
 		<button
 			v-if="!mobileHasLeadingControl"
-			class="flex size-11 shrink-0 items-center justify-center rounded"
+			class="flex size-11 shrink-0 items-center justify-center rounded-4"
 			:title="__('Frappe Wiki')"
 			@click="router.push({ name: 'SpaceList' })"
 		>
@@ -24,7 +24,7 @@
 		     far better than the logo did. -->
 		<Dropdown :options="appMenuOptions">
 			<button
-				class="flex size-11 shrink-0 items-center justify-center rounded text-ink-gray-7 hover:bg-surface-gray-3"
+				class="flex size-11 shrink-0 items-center justify-center rounded-4 text-ink-gray-7 hover:bg-surface-gray-3"
 				:title="__('Menu')"
 				aria-label="Menu"
 			>
