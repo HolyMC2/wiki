@@ -1,13 +1,34 @@
 <template>
-<Sidebar
-	v-model:collapsed="isSidebarCollapsed"
-	:header="header"
-	:sections="sections"
-/>
+	<Sidebar v-model:collapsed="isSidebarCollapsed">
+		<SidebarHeader
+			:title="__('Frappe Wiki')"
+			:subtitle="userStore.data?.full_name"
+			logo="/assets/wiki/images/wiki-logo.png"
+			:menu-items="headerMenuItems"
+		/>
+		<nav class="flex flex-1 flex-col gap-0.5 overflow-y-auto px-2 pt-1">
+			<SidebarItem
+				v-for="item in navItems"
+				:key="item.label"
+				:label="item.label"
+				:icon="item.icon"
+				:route="item.to"
+				:active="route.path.startsWith(router.resolve(item.to).path)"
+			/>
+		</nav>
+		<div class="px-2 pb-2">
+			<SidebarCollapseToggle />
+		</div>
+	</Sidebar>
 </template>
 
 <script setup>
-import { Sidebar } from 'frappe-ui';
+import {
+	Sidebar,
+	SidebarCollapseToggle,
+	SidebarHeader,
+	SidebarItem,
+} from 'frappe-ui';
 
 import { useSessionStore } from '@/stores/session';
 import { useUserStore } from '@/stores/user';
@@ -31,24 +52,19 @@ const { themeIcon, toggleTheme, initTheme } = useTheme();
 
 const isSidebarCollapsed = useStorage('is-sidebar-collapsed', false);
 
-const header = computed(() => ({
-	title: __('Frappe Wiki'),
-	subtitle: userStore.data?.full_name,
-	logo: '/assets/wiki/images/wiki-logo.png',
-	menuItems: [
-		...(userStore.isWikiManager
-			? [
-					{
-						label: __('Settings'),
-						icon: LucideSettings,
-						onClick: () => openWikiSettings(),
-					},
-				]
-			: []),
-		{ label: __('Toggle Theme'), icon: themeIcon.value, onClick: toggleTheme },
-		{ label: __('Log out'), icon: LucideLogOut, onClick: logout },
-	],
-}));
+const headerMenuItems = computed(() => [
+	...(userStore.isWikiManager
+		? [
+				{
+					label: __('Settings'),
+					icon: LucideSettings,
+					onClick: () => openWikiSettings(),
+				},
+			]
+		: []),
+	{ label: __('Toggle Theme'), icon: themeIcon.value, onClick: toggleTheme },
+	{ label: __('Log out'), icon: LucideLogOut, onClick: logout },
+]);
 
 const navItems = [
 	{ label: __('Spaces'), icon: LucideRocket, to: { name: 'SpaceList' } },
@@ -58,16 +74,6 @@ const navItems = [
 		to: { name: 'ChangeRequests' },
 	},
 ];
-
-const sections = computed(() => [
-	{
-		label: '',
-		items: navItems.map((item) => ({
-			...item,
-			isActive: route.path.startsWith(router.resolve(item.to).path),
-		})),
-	},
-]);
 
 onMounted(() => {
 	initTheme();

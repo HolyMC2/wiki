@@ -26,7 +26,7 @@
 					variant="ghost"
 					icon="lucide-external-link"
 					:title="__('View Space')"
-					:link="'/' + spaceRoute"
+					:href="'/' + spaceRoute"
 				/>
 			</div>
 			<p class="text-sm text-ink-gray-5 mt-0.5">{{ spaceRoute }}</p>

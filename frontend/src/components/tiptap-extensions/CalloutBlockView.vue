@@ -305,7 +305,7 @@ const dropdownOptions = computed(() => [
 	{
 		group: 'Type',
 		hideLabel: true,
-		items: [
+		options: [
 			{
 				label: 'Note',
 				icon: LucideInfo,
@@ -341,7 +341,7 @@ const dropdownOptions = computed(() => [
         <div class="flex items-center gap-2">
             <span class="shrink-0 flex items-center callout-icon" v-html="icon"></span>
             <span class="flex-1 text-sm-medium leading-[1.4] text-ink-gray-9">{{ displayTitle }}</span>
-            <Dropdown :options="dropdownOptions" placement="bottom-end">
+            <Dropdown :options="dropdownOptions" align="end">
                 <Button variant="ghost" size="sm" class="opacity-0 group-hover:opacity-100 transition-opacity shrink-0 callout-menu-btn">
                     <LucideMoreHorizontal class="size-3.5" />
                 </Button>
