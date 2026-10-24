@@ -63,31 +63,31 @@ const logoUrl = '/assets/wiki/images/wiki-logo.png';
 const appMenuOptions = computed(() => [
 	{
 		label: __('Spaces'),
-		icon: 'book-open',
+		icon: 'lucide-book-open',
 		onClick: () => router.push({ name: 'SpaceList' }),
 	},
 	{
 		label: __('Change Requests'),
-		icon: 'git-branch',
+		icon: 'lucide-git-branch',
 		onClick: () => router.push({ name: 'ChangeRequests' }),
 	},
 	...(userStore.isWikiManager
 		? [
 				{
 					label: __('Settings'),
-					icon: 'settings',
+					icon: 'lucide-settings',
 					onClick: () => openWikiSettings(),
 				},
 			]
 		: []),
 	{
 		label: __('Toggle Theme'),
-		icon: userTheme.value === 'dark' ? 'sun' : 'moon',
+		icon: userTheme.value === 'dark' ? 'lucide-sun' : 'lucide-moon',
 		onClick: toggleTheme,
 	},
 	{
 		label: __('Log out'),
-		icon: 'log-out',
+		icon: 'lucide-log-out',
 		onClick: () => sessionStore.logout.submit(),
 	},
 ]);

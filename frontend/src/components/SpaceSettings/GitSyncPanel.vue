@@ -64,7 +64,7 @@
 				<Button
 					size="sm"
 					variant="subtle"
-					icon="copy"
+					icon="lucide-copy"
 					:title="__('Copy webhook URL')"
 					@click="copyWebhookUrl"
 				/>
@@ -80,7 +80,7 @@
 				<Button
 					variant="ghost"
 					size="sm"
-					icon="refresh-cw"
+					icon="lucide-refresh-cw"
 					:loading="logs.loading"
 					@click="logs.reload()"
 				/>

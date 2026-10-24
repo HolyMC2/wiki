@@ -13,8 +13,8 @@
 				</template>
 			</FormControl>
 			<div v-if="!readonly" class="flex gap-2 ml-auto">
-				<Button :title="__('New Group')" icon="folder-plus" variant="subtle" @click="openCreateDialog(rootNode, true)" />
-				<Button :title="__('New Page')" icon="file-plus" variant="subtle" @click="openCreateDialog(rootNode, false)" />
+				<Button :title="__('New Group')" icon="lucide-folder-plus" variant="subtle" @click="openCreateDialog(rootNode, true)" />
+				<Button :title="__('New Page')" icon="lucide-file-plus" variant="subtle" @click="openCreateDialog(rootNode, false)" />
 				<Button :title="__('External Link')" variant="subtle" @click="openExternalLinkDialog(rootNode)">
 					<template #icon>
 						<LucideLink class="size-4" />

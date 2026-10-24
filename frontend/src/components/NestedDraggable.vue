@@ -73,10 +73,10 @@
 						<Badge v-else-if="changeTypeMap.get(element.doc_key) === 'modified'" variant="subtle" theme="blue" size="sm">
 							{{ __('Modified') }}
 						</Badge>
-						<Badge v-else-if="changeTypeMap.get(element.doc_key) === 'reordered'" variant="subtle" theme="orange" size="sm">
+						<Badge v-else-if="changeTypeMap.get(element.doc_key) === 'reordered'" variant="subtle" theme="amber" size="sm">
 							{{ __('Reordered') }}
 						</Badge>
-						<Badge v-else-if="!element.is_group && !element.is_published" variant="subtle" theme="orange" size="sm">
+						<Badge v-else-if="!element.is_group && !element.is_published" variant="subtle" theme="amber" size="sm">
 							{{ __('Not Published') }}
 						</Badge>
                     </div>
@@ -410,22 +410,22 @@ function getDropdownOptions(element) {
 			...[
 				{
 					label: __('Add Page'),
-					icon: 'file-plus',
+					icon: 'lucide-file-plus',
 					onClick: () => emit('create', element.doc_key, false),
 				},
 				{
 					label: __('Add Group'),
-					icon: 'folder-plus',
+					icon: 'lucide-folder-plus',
 					onClick: () => emit('create', element.doc_key, true),
 				},
 				{
 					label: __('Add External Link'),
-					icon: 'link',
+					icon: 'lucide-link',
 					onClick: () => emit('external-link', element.doc_key),
 				},
 				{
 					label: __('Rename'),
-					icon: 'edit-2',
+					icon: 'lucide-edit-2',
 					onClick: () => emit('rename', element),
 				},
 			],
@@ -435,12 +435,12 @@ function getDropdownOptions(element) {
 	if (!element.is_group) {
 		options.push({
 			label: __('Change Title'),
-			icon: 'edit-2',
+			icon: 'lucide-edit-2',
 			onClick: () => emit('rename', element),
 		});
 		options.push({
 			label: element.is_published ? __('Unpublish') : __('Publish'),
-			icon: element.is_published ? 'eye-off' : 'eye',
+			icon: element.is_published ? 'lucide-eye-off' : 'lucide-eye',
 			onClick: () => togglePublish(element),
 		});
 	}
@@ -452,7 +452,7 @@ function getDropdownOptions(element) {
 			options: [
 				{
 					label: __('Delete'),
-					icon: 'trash-2',
+					icon: 'lucide-trash-2',
 					theme: 'red',
 					onClick: () => emit('delete', element),
 				},

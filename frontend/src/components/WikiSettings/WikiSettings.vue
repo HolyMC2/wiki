@@ -30,7 +30,7 @@
 				<h2 class="text-2xl-semibold text-ink-gray-9">
 					{{ activeTab?.label }}
 				</h2>
-				<Button variant="ghost" icon="x" @click="$emit('close')" />
+				<Button variant="ghost" icon="lucide-x" @click="$emit('close')" />
 			</div>
 			<div class="flex-1 overflow-y-auto p-6">
 				<div
@@ -88,10 +88,10 @@ const settings = createDocumentResource({
 });
 
 const tabs = [
-	{ label: __('General'), value: 'general', icon: 'settings' },
-	{ label: __('Feedback'), value: 'feedback', icon: 'message-square' },
-	{ label: __('Header & Robots'), value: 'code', icon: 'code' },
-	{ label: __('GitHub Sync'), value: 'github', icon: 'github' },
+	{ label: __('General'), value: 'general', icon: 'lucide-settings' },
+	{ label: __('Feedback'), value: 'feedback', icon: 'lucide-message-square' },
+	{ label: __('Header & Robots'), value: 'code', icon: 'lucide-code' },
+	{ label: __('GitHub Sync'), value: 'github', icon: 'lucide-git-branch' },
 ];
 
 const selectedTab = ref(

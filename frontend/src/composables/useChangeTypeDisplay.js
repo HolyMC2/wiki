@@ -26,7 +26,7 @@ const CHANGE_TYPE_CONFIG = {
 	reordered: {
 		icon: LucideArrowUpDown,
 		iconClass: 'bg-amber-100 text-amber-600',
-		theme: 'orange',
+		theme: 'amber',
 		label: __('Reordered'),
 	},
 };

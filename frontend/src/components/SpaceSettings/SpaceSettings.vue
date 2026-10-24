@@ -33,20 +33,20 @@
 					</h2>
 					<Badge
 						v-if="selectedTab === 'permissions'"
-						theme="orange"
+						theme="amber"
 						size="sm"
 					>
 						{{ __('Beta') }}
 					</Badge>
 					<Badge
 						v-if="selectedTab === 'permissions' && permissionsDirty"
-						theme="orange"
+						theme="amber"
 						size="sm"
 					>
 						{{ __('Unsaved changes') }}
 					</Badge>
 				</div>
-				<Button variant="ghost" icon="x" @click="$emit('close')" />
+				<Button variant="ghost" icon="lucide-x" @click="$emit('close')" />
 			</div>
 			<div class="flex-1 overflow-y-auto p-6">
 				<GeneralPanel
@@ -93,12 +93,16 @@ defineEmits(['close', 'open-update-routes', 'open-clone']);
 
 const tabs = computed(() => {
 	const items = [
-		{ label: __('General'), value: 'general', icon: 'settings' },
-		{ label: __('Permissions'), value: 'permissions', icon: 'lock' },
+		{ label: __('General'), value: 'general', icon: 'lucide-settings' },
+		{ label: __('Permissions'), value: 'permissions', icon: 'lucide-lock' },
 	];
 	// GitHub Sync settings only apply to git-synced spaces.
 	if (props.space.doc?.git_synced) {
-		items.push({ label: __('GitHub Sync'), value: 'git-sync', icon: 'github' });
+		items.push({
+			label: __('GitHub Sync'),
+			value: 'git-sync',
+			icon: 'lucide-git-branch',
+		});
 	}
 	return items;
 });

@@ -23,7 +23,7 @@
         <Button
           v-if="isManager && isMobile"
           variant="solid"
-          icon="plus"
+          icon="lucide-plus"
           :title="__('New Space')"
           @click="showCreateDialog = true"
         />
@@ -88,7 +88,7 @@
           <Badge
             v-if="column.key === 'is_published'"
             variant="subtle"
-            :theme="item ? 'green' : 'orange'"
+            :theme="item ? 'green' : 'amber'"
             size="sm"
             :label="item ? __('Published') : __('Unpublished')"
           />
@@ -99,7 +99,7 @@
               v-if="row.is_published"
               variant="ghost"
               size="sm"
-              icon-left="external-link"
+              icon-left="lucide-external-link"
               @click.stop.prevent="viewSpace(row)"
             >
               {{ __('View') }}
@@ -115,7 +115,7 @@
           @click="() => spaces.next()"
           :loading="spaces.list.loading"
           :label="__('Load more')"
-          icon-left="refresh-cw"
+          icon-left="lucide-refresh-cw"
         />
       </div>
     </div>

@@ -2,7 +2,7 @@
 	<div class="flex flex-col h-full">
 		<div class="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between p-3 sm:p-4 border-b border-outline-gray-2 bg-surface-base shrink-0">
 			<div class="flex items-center gap-4">
-				<Button variant="ghost" icon-left="arrow-left" @click="goBack">
+				<Button variant="ghost" icon-left="lucide-arrow-left" @click="goBack">
 					{{ __('Back') }}
 				</Button>
 				<div v-if="changeRequest.doc">
@@ -234,7 +234,7 @@
 										<LucideArrowRight class="size-4 text-ink-gray-4 shrink-0" />
 										<div class="flex items-center gap-2 px-3 py-2 rounded-5 bg-surface-gray-2 text-ink-gray-8 font-medium">
 											<span>{{ locationPath(diffsByDocKey[change.doc_key].location?.head, change.title) }}</span>
-											<Badge v-if="positionLabel(diffsByDocKey[change.doc_key].location?.head)" variant="subtle" theme="orange" size="sm">
+											<Badge v-if="positionLabel(diffsByDocKey[change.doc_key].location?.head)" variant="subtle" theme="amber" size="sm">
 												{{ positionLabel(diffsByDocKey[change.doc_key].location?.head) }}
 											</Badge>
 										</div>
@@ -604,7 +604,7 @@ const reviewMenuOptions = computed(() => {
 	if (status === 'In Review') {
 		options.push({
 			label: __('Approve & Merge'),
-			icon: 'check-circle',
+			icon: 'lucide-check-circle',
 			onClick: () => {
 				showApproveMergeDialog.value = true;
 			},
@@ -613,21 +613,21 @@ const reviewMenuOptions = computed(() => {
 	if (['In Review', 'Approved'].includes(status)) {
 		options.push({
 			label: __('Request Changes'),
-			icon: 'message-square',
+			icon: 'lucide-message-square',
 			onClick: () => {
 				showRequestChangesDialog.value = true;
 			},
 		});
 		options.push({
 			label: __('Reject'),
-			icon: 'x-circle',
+			icon: 'lucide-x-circle',
 			onClick: () => {
 				showRejectDialog.value = true;
 			},
 		});
 		options.push({
 			label: __('Assign reviewer'),
-			icon: 'user-plus',
+			icon: 'lucide-user-plus',
 			onClick: () => {
 				showAssignDialog.value = true;
 			},
@@ -639,7 +639,7 @@ const reviewMenuOptions = computed(() => {
 	if (canWithdraw.value) {
 		options.push({
 			label: __('Withdraw'),
-			icon: 'rotate-ccw',
+			icon: 'lucide-rotate-ccw',
 			onClick: handleWithdraw,
 		});
 	}
@@ -882,7 +882,7 @@ function getStatusTheme(status) {
 		case 'Draft':
 			return 'blue';
 		case 'In Review':
-			return 'orange';
+			return 'amber';
 		case 'Changes Requested':
 			return 'red';
 		case 'Approved':
@@ -903,7 +903,7 @@ function getConflictTheme(type) {
 		case 'content':
 			return 'blue';
 		case 'meta':
-			return 'orange';
+			return 'amber';
 		case 'tree':
 			return 'red';
 		default:
