@@ -198,7 +198,7 @@ function closeViewer() {
 
 .wiki-pdf-icon {
 	flex-shrink: 0;
-	color: var(--ink-red-5, #dc2626);
+	color: var(--ink-red-4, #dc2626);
 }
 
 .wiki-pdf-name {
@@ -296,7 +296,7 @@ function closeViewer() {
 }
 
 .wiki-pdf-error-body {
-	color: var(--ink-red-5, #dc2626);
+	color: var(--ink-red-4, #dc2626);
 }
 
 .wiki-pdf-spinner {

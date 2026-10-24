@@ -29,7 +29,7 @@
                         class="flex items-center gap-2 w-full px-3 py-2 border-0 rounded-5 bg-transparent text-sm text-left cursor-pointer transition-all duration-150"
                      :class="[
                                 item.danger
-                                    ? 'text-ink-red-8 hover:bg-surface-gray-2'
+                                    ? 'text-ink-red-7 hover:bg-surface-gray-2'
                                     : 'text-ink-gray-7 hover:bg-surface-gray-2',
                                 { 'opacity-40 pointer-events-none': item.disabled() }
                             ]"
