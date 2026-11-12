@@ -85,12 +85,13 @@
   margin-bottom: 0.5rem;
 }
 
-/* Link styling - underline to distinguish gray links */
+/* Link styling - underline to distinguish gray links. A link wraps between
+   words; only a word longer than the line (a bare URL) breaks inside. */
 .prose a {
   text-decoration: underline;
   text-underline-offset: 2px;
   transition: color 0.15s ease;
-  word-break: break-all;
+  overflow-wrap: anywhere;
 }
 
 .prose a:hover {
